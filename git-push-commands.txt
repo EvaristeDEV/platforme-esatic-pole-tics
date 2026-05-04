@@ -1,0 +1,11 @@
+# Commands to run after creating GitHub repository:
+
+# Add remote origin (replace with your actual repo URL)
+git remote add origin https://github.com/EvaristeDEV/platforme-esatic-pole-tics.git
+
+# Push to GitHub
+git push -u origin master
+
+# If you get an error about main branch, use:
+git branch -M main
+git push -u origin main
