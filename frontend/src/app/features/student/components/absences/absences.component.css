@@ -1,0 +1,18 @@
+.absences-list { padding: 0; }
+.absences-card { background: rgba(255,255,255,0.95); border-radius:12px; padding:12px; box-shadow:0 8px 25px rgba(0,0,0,0.15); backdrop-filter: blur(10px); }
+
+/* icons inside absences */
+.absences-card mat-icon,
+.absences-card svg { color: white !important; fill: white !important; }
+
+/* ensure any icons used in list items are white */
+.absences-card .course mat-icon,
+.absences-card .course svg { color:white !important; fill:white !important; }
+.absence-item { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #eee; }
+.course { font-weight:700; color:var(--brand-dark-blue); }
+.date { color:#666; font-size:13px; }
+.status { text-transform:capitalize; margin-right:12px; }
+
+.status.pending { color: #ff9800; font-weight:600; }
+.status.approved { color: #28a745; font-weight:600; }
+.status.rejected { color: #dc3545; font-weight:600; }

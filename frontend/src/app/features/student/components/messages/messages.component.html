@@ -1,0 +1,10 @@
+<div class="messages">
+  <h3>Messagerie</h3>
+  <div *ngFor="let m of messages" class="message" [class.unread]="!m.read" (click)="openMessage(m)">
+    <div class="left">
+      <div class="sender">{{m.sender}}</div>
+      <div class="subject">{{m.subject}}</div>
+    </div>
+    <div class="date">{{m.date | date:'short'}}</div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<div class="student-dashboard">
+  <!-- Floating Shapes Background -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="dashboard-header">
+    <div class="header-content">
+      <h1>Tableau de Bord Étudiant</h1>
+      <p class="subtitle">Consultez vos cours, messages et informations personnelles</p>
+    </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-content">
+
+    <!-- Statistics Overview (static placeholders) -->
+    <section class="stats-section">
+      <h2>Aperçu</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">⏰</div>
+          <div class="stat-info">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Cours Aujourd'hui</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-info">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Matières</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">✉️</div>
+          <div class="stat-info">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Messages Non Lus</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions-section">
+      <h2>Actions Rapides</h2>
+      <div class="actions-grid">
+        <mat-card class="action-card" (click)="navigateTo('/student/messages')">
+          <div class="action-header">
+            <div class="action-icon">📩</div>
+          </div>
+          <mat-card-content>
+            <h3>Messagerie</h3>
+            <p>Consultez et répondez à vos messages.</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button color="primary" (click)="navigateTo('/student/messages')">Accéder</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="action-card" (click)="navigateTo('/student/absences')">
+          <div class="action-header">
+            <div class="action-icon">📅</div>
+          </div>
+          <mat-card-content>
+            <h3>Absences</h3>
+            <p>Vérifiez vos absences et justificatifs.</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button color="primary" (click)="navigateTo('/student/absences')">Accéder</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="action-card" (click)="navigateTo('/student/grades')">
+          <div class="action-header">
+            <div class="action-icon">📊</div>
+          </div>
+          <mat-card-content>
+            <h3>Notes</h3>
+            <p>Consultez vos notes et moyennes.</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button color="primary" (click)="navigateTo('/student/grades')">Accéder</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card class="action-card" (click)="navigateTo('/student/notifications')">
+          <div class="action-header">
+            <div class="action-icon">�</div>
+          </div>
+          <mat-card-content>
+            <h3>Notifications</h3>
+            <p>Annonces et alertes importantes.</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button color="primary" (click)="navigateTo('/student/notifications')">Accéder</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+      <h2>Emploi du Temps d'Aujourd'hui</h2>
+      <mat-card class="schedule-card">
+        <mat-card-header>
+          <div class="icon-avatar">📅</div>
+          <mat-card-title>Aujourd'hui</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- Keep the timetable component unchanged -->
+          <app-student-timetable></app-student-timetable>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="primary" (click)="navigateTo('/student/timetable')">Voir Emploi Complet</button>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+
+    <!-- Recent Messages -->
+    <section class="messages-section">
+      <h2>Messages Récents</h2>
+      <mat-card class="messages-card">
+        <mat-card-header>
+          <div class="icon-avatar">💬</div>
+          <mat-card-title>Messagerie</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="message-item">
+            <div class="message-avatar">�</div>
+            <div class="message-content">
+              <div class="message-sender">Nom Expéditeur</div>
+              <div class="message-subject">Objet du message</div>
+              <div class="message-date">19/10/2025 14:30</div>
+            </div>
+          </div>
+          <div class="message-item">
+            <div class="message-avatar">👤</div>
+            <div class="message-content">
+              <div class="message-sender">Autre Expéditeur</div>
+              <div class="message-subject">Rappel important</div>
+              <div class="message-date">18/10/2025 09:15</div>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="primary" (click)="navigateTo('/student/messages')">Voir Tous les Messages</button>
+        </mat-card-actions>
+      </mat-card>
+    </section>
+
+  </div>
+</div>

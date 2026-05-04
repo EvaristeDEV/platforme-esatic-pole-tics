@@ -1,0 +1,32 @@
+<div class="timetable-wrapper">
+  <div class="controls">
+    <mat-form-field appearance="outline">
+      <mat-label>Semaine</mat-label>
+      <mat-select [(value)]="selectedWeek">
+        <mat-option *ngFor="let w of weeks" [value]="w.value">{{w.label}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="grid">
+    <div class="grid-header">
+      <div class="time-col"></div>
+      <div class="day-col" *ngFor="let d of days">{{d}}</div>
+    </div>
+
+    <div class="grid-body">
+      <div class="row" *ngFor="let t of timeSlots">
+        <div class="time-col">{{t}}</div>
+        <div class="day-col" *ngFor="let d of days">
+          <div class="course" *ngIf="getCourse(d, t) as course">
+            <div class="subject">{{course.subject}}</div>
+            <div class="meta">{{course.teacher}} • Salle {{course.room}}</div>
+            <button mat-icon-button (click)="requestExcuse(course, $event)" matTooltip="Demander excuse">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

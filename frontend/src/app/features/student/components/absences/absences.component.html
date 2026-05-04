@@ -1,0 +1,13 @@
+<div class="absences-list">
+  <h3>Mes absences</h3>
+  <div *ngFor="let a of absences" class="absence-item">
+    <div class="info">
+      <div class="course">{{a.course}}</div>
+      <div class="date">{{a.date | date:'fullDate'}}</div>
+    </div>
+    <div class="actions">
+      <div class="status">{{a.status}}</div>
+      <button mat-button (click)="requestExcuse(a)">Demander excuse</button>
+    </div>
+  </div>
+</div>

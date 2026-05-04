@@ -1,0 +1,35 @@
+.timetable-container {
+	position: relative;
+	min-height: 100vh;
+	background: linear-gradient(135deg, var(--brand-dark-blue, #0b5ea8) 0%, var(--brand-light-blue, #29a6e0) 100%);
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	overflow-x: hidden;
+	padding: 2rem 1.5rem;
+}
+
+.floating-shapes { position: fixed; top:0; left:0; width:100%; height:100%; z-index:1; pointer-events:none; }
+.shape { position:absolute; background: rgba(255,255,255,0.06); border-radius:50%; backdrop-filter:blur(8px); }
+.shape-1 { width:300px; height:300px; top:10%; left:-140px; }
+.shape-2 { width:200px; height:200px; top:50%; right:-90px; }
+
+.timetable-header { position: relative; z-index:10; text-align:center; color:var(--brand-white,#fff); margin-bottom:1.5rem; }
+.timetable-header h1 { font-size:2rem; margin:0; font-weight:800; text-shadow:0 4px 12px rgba(0,0,0,0.2); }
+
+.timetable-content { position: relative; z-index:10; max-width:1200px; margin:0 auto; }
+
+.controls { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.grid { border-radius:12px; overflow:hidden; background: rgba(255,255,255,0.95); box-shadow:0 8px 25px rgba(0,0,0,0.12); backdrop-filter:blur(8px); }
+.grid-header { display:flex; background: linear-gradient(135deg, var(--brand-dark-blue,#0b5ea8), var(--brand-light-blue,#29a6e0)); color:white; }
+.grid-header .time-col { width:120px; padding:12px; }
+.grid-header .day-col { flex:1; padding:12px; text-align:center; font-weight:700; }
+.grid-body .row { display:flex; border-bottom:1px solid #eee; }
+.time-col { width:120px; padding:12px; background: linear-gradient(135deg, var(--brand-dark-blue,#0b5ea8), var(--brand-light-blue,#29a6e0)); color:white; font-weight:600; border-right:1px solid rgba(0,0,0,0.04); }
+.day-col { flex:1; padding:12px; min-height:80px; }
+.course { background: linear-gradient(135deg,#e3f2fd 0%, #bbdefb 100%); border-radius:8px; padding:8px; box-shadow:0 4px 12px rgba(0,0,0,0.08); display:flex; justify-content:space-between; align-items:center; }
+.subject { font-weight:700; color:var(--brand-dark-blue,#0b5ea8); }
+.meta { font-size:12px; color:#666; }
+
+@media (max-width: 768px) {
+	.grid-header .time-col, .time-col { width: 100px; }
+	.timetable-header h1 { font-size:1.6rem; }
+}

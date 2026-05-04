@@ -1,0 +1,8 @@
+<div class="grades">
+  <h3>Mes notes</h3>
+  <div *ngFor="let g of grades" class="grade-item">
+    <div class="subject">{{g.subject}}</div>
+    <div class="score">{{g.grade}} / 20</div>
+  </div>
+  <div class="average">Moyenne: {{getAverage()}} / 20</div>
+</div>
